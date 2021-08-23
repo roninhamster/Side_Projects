@@ -9,7 +9,7 @@ $TermArray = $SearchTerms.Split(",")
 
 #Hard coded the path to eliminate any errors. Could be user inputed to provide flexibility.
 #$path = "\\mpls-fs-100p\318iog\39 ios det 1"
-$path = Read-Host -Prompt "Provide full path for directory to be searched. Example:\\mpls-fs-100p\318iog\39 ios det 1"
+$path = Read-Host -Prompt "Provide full path for directory to be searched."
 
 #Script only works with MS Word and Excel files. PDFs require an external DLL(itextsharp.dll) from my research that would need to be downloded. 
 $files = Get-Childitem -Path $path -Include *.docx,*.doc,*.xlsx,*.xlsm -Recurse -ErrorAction SilentlyContinue -Force | Where-Object { !($_.psiscontainer) }
